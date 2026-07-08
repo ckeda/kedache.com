@@ -1,3 +1,51 @@
+// Loader: play the wordmark intro, then fade out once the page has
+// loaded (min display 900ms so it never flashes). Skipped on repeat
+// views within the same session; CSS auto-hides at 3.5s as a fallback.
+(function () {
+  var loader = document.getElementById('loader');
+  if (!loader || loader.classList.contains('skip')) return;
+
+  var MIN = 900;
+  var start = Date.now();
+
+  function hide() {
+    loader.classList.add('done');
+    try { sessionStorage.setItem('kc-seen', '1'); } catch (e) {}
+  }
+
+  function onLoaded() {
+    var wait = Math.max(0, MIN - (Date.now() - start));
+    setTimeout(hide, wait);
+  }
+
+  if (document.readyState === 'complete') onLoaded();
+  else window.addEventListener('load', onLoaded);
+
+  setTimeout(hide, 4000); // hard cap
+})();
+
+// Mobile nav toggle
+(function () {
+  var nav = document.querySelector('nav');
+  var btn = document.getElementById('nav-toggle');
+  var links = document.getElementById('nav-links');
+  if (!nav || !btn || !links) return;
+
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+    }
+  });
+})();
+
 (function () {
   var rot = document.getElementById('rotator');
   if (!rot) return;
