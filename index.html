@@ -8,6 +8,7 @@
 <meta name="author" content="Keda Che">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#111111">
+<meta name="site-version" content="2026-07-08-1">
 <link rel="canonical" href="https://kedache.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kedache.com/">
@@ -15,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Keda Che | AI Product, Fintech &amp; Frontier Technology Leader">
 <meta property="og:description" content="10+ years turning emerging technology — AI, stablecoins, blockchain, hardware — into products, teams, and businesses.">
-<meta property="og:image" content="https://kedache.com/assets/images/keda-social.jpg">
+<meta property="og:image" content="https://kedache.com/assets/images/keda-social.jpg?v=2026-07-08-1">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="1484">
@@ -23,10 +24,59 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keda Che | AI Product, Fintech &amp; Frontier Technology Leader">
 <meta name="twitter:description" content="10+ years turning emerging technology into products, teams, and businesses.">
-<meta name="twitter:image" content="https://kedache.com/assets/images/keda-social.jpg">
+<meta name="twitter:image" content="https://kedache.com/assets/images/keda-social.jpg?v=2026-07-08-1">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='72' font-size='62' font-family='Helvetica,Arial' font-weight='bold' fill='%23fff' text-anchor='middle'>K</text></svg>">
-<link rel="preload" as="image" href="assets/images/keda.webp">
-<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+window.__SITE_VERSION__ = '2026-07-08-1';
+
+(function () {
+  var version = window.__SITE_VERSION__;
+  var refreshKey = 'kc-version-refresh';
+  var url;
+
+  if (!window.fetch || !window.URL) return;
+
+  try {
+    url = new URL(window.location.href);
+    if (url.searchParams.get('kcv') === version && window.history && window.history.replaceState) {
+      url.searchParams.delete('kcv');
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+  } catch (e) {
+    return;
+  }
+
+  // If an old HTML document is cached, this forces one clean refresh to the newest release.
+  fetch('assets/site-version.json?ts=' + Date.now(), { cache: 'no-store' })
+    .then(function (response) {
+      if (!response.ok) return null;
+      return response.json();
+    })
+    .then(function (data) {
+      var latest = data && data.version;
+      var reloadUrl;
+      var marker;
+
+      if (!latest || latest === version) {
+        try { sessionStorage.removeItem(refreshKey); } catch (e) {}
+        return;
+      }
+
+      marker = version + '->' + latest;
+      try {
+        if (sessionStorage.getItem(refreshKey) === marker) return;
+        sessionStorage.setItem(refreshKey, marker);
+      } catch (e) {}
+
+      reloadUrl = new URL(window.location.href);
+      reloadUrl.searchParams.set('kcv', latest);
+      window.location.replace(reloadUrl.toString());
+    })
+    .catch(function () {});
+})();
+</script>
+<link rel="preload" as="image" href="assets/images/keda.webp?v=2026-07-08-1">
+<link rel="stylesheet" href="assets/css/styles.css?v=2026-07-08-1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +94,7 @@
       "@id": "https://kedache.com/#person",
       "name": "Keda Che",
       "url": "https://kedache.com/",
-      "image": "https://kedache.com/assets/images/keda.webp",
+      "image": "https://kedache.com/assets/images/keda.webp?v=2026-07-08-1",
       "jobTitle": "AI Product, Commercialization and Emerging Technology Leader",
       "email": "mailto:che@alumni.harvard.edu",
       "alumniOf": [
@@ -289,7 +339,7 @@
       <span class="sec-note">Background</span>
     </div>
     <div class="about-grid">
-      <img src="assets/images/keda.webp" alt="Keda Che" class="portrait" onerror="this.style.display='none'">
+      <img src="assets/images/keda.webp?v=2026-07-08-1" alt="Keda Che" class="portrait" onerror="this.style.display='none'">
       <div>
         <p>My career began at Harvard's innovation ecosystem and IDEO, where I learned human-centered design while exploring early blockchain applications with institutional partners like Fidelity Future Lab, Citi Ventures and Ethereum Foundation.</p>
         <p>Since then, I've founded and led ventures across enterprise blockchain, consumer hardware, DePIN, digital assets, stablecoins, DAO, AI products, AI-assisted healthcare, and AI-for-Science initiatives.</p>
@@ -327,7 +377,7 @@
     <p class="contact-copy">I'm open to leadership roles and collaborations across AI products, fintech, and frontier technology.</p>
     <a class="email" href="mailto:che@alumni.harvard.edu">che@alumni.harvard.edu</a>
     <div class="socials tight">
-      <a class="cv-button" href="assets/docs/Keda_Che_Public_CV.pdf" download>Download CV (PDF)</a>
+      <a class="cv-button" href="assets/docs/Keda_Che_Public_CV.pdf?v=2026-07-08-1" download>Download CV (PDF)</a>
     </div>
     <div class="socials">
       <a href="https://www.linkedin.com/in/kedache/" target="_blank" rel="noopener">LinkedIn</a>
@@ -344,6 +394,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=2026-07-08-1" defer></script>
 </body>
 </html>
