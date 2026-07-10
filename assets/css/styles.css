@@ -121,18 +121,18 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .card h3 { font-size: 22px; font-weight: 700; letter-spacing: 0; line-height: 1.15; }
 .card p { font-size: 13.5px; margin-top: 8px; opacity: 0; max-height: 0; transition: opacity .25s, max-height .3s; line-height: 1.45; }
 .card:hover p, .card:focus-visible p { opacity: .95; max-height: 140px; }
-.g1  { background: linear-gradient(rgba(5,10,30,.35), rgba(5,10,30,.35)), url('../images/astrava-card.webp?v=2026-07-10-1') center/cover; }
-.g2  { background: linear-gradient(rgba(10,5,40,.35), rgba(10,5,40,.35)), url('../images/stablecoin-card.webp?v=2026-07-10-1') center/cover; }
-.g3  { background: linear-gradient(rgba(20,12,8,.35), rgba(20,12,8,.35)), url('../images/vetara-card.webp?v=2026-07-10-1') center/cover; }
-.g4  { background: linear-gradient(rgba(30,5,60,.3), rgba(30,5,60,.3)), url('../images/votigram-card.webp?v=2026-07-10-1') center/cover; }
-.g5  { background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/godgpt-card.webp?v=2026-07-10-1') center/cover; }
-.g6  { background: linear-gradient(rgba(10,5,25,.3), rgba(10,5,25,.3)), url('../images/tmrwdao-card.webp?v=2026-07-10-1') center/cover; }
-.g7  { background: linear-gradient(rgba(15,10,10,.4), rgba(15,10,10,.4)), url('../images/ubbey-card.webp?v=2026-07-10-1') center/cover; }
-.g8  { background: linear-gradient(rgba(5,5,15,.25), rgba(5,5,15,.25)), url('../images/next-card.webp?v=2026-07-10-1') center/cover; }
-.g9  { background: linear-gradient(rgba(15,15,20,.3), rgba(15,15,20,.3)), url('../images/tmark-card.webp?v=2026-07-10-1') center/cover; }
-.g10 { background: linear-gradient(rgba(5,15,30,.25), rgba(5,15,30,.25)), url('../images/echolisten-card.webp?v=2026-07-10-1') center top/cover; }
-.g11 { background: linear-gradient(rgba(20,10,25,.4), rgba(20,10,25,.4)), url('../images/ownership-card.webp?v=2026-07-10-1') center/cover; }
-.g12 { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../images/perennial-card.webp?v=2026-07-10-1') center/cover; }
+.g1  { background: linear-gradient(rgba(5,10,30,.35), rgba(5,10,30,.35)), url('../images/astrava-card.webp?v=2026-07-10-2') center/cover; }
+.g2  { background: linear-gradient(rgba(10,5,40,.35), rgba(10,5,40,.35)), url('../images/stablecoin-card.webp?v=2026-07-10-2') center/cover; }
+.g3  { background: linear-gradient(rgba(20,12,8,.35), rgba(20,12,8,.35)), url('../images/vetara-card.webp?v=2026-07-10-2') center/cover; }
+.g4  { background: linear-gradient(rgba(30,5,60,.3), rgba(30,5,60,.3)), url('../images/votigram-card.webp?v=2026-07-10-2') center/cover; }
+.g5  { background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/godgpt-card.webp?v=2026-07-10-2') center/cover; }
+.g6  { background: linear-gradient(rgba(10,5,25,.3), rgba(10,5,25,.3)), url('../images/tmrwdao-card.webp?v=2026-07-10-2') center/cover; }
+.g7  { background: linear-gradient(rgba(15,10,10,.4), rgba(15,10,10,.4)), url('../images/ubbey-card.webp?v=2026-07-10-2') center/cover; }
+.g8  { background: linear-gradient(rgba(5,5,15,.25), rgba(5,5,15,.25)), url('../images/next-card.webp?v=2026-07-10-2') center/cover; }
+.g9  { background: linear-gradient(rgba(15,15,20,.3), rgba(15,15,20,.3)), url('../images/tmark-card.webp?v=2026-07-10-2') center/cover; }
+.g10 { background: linear-gradient(rgba(5,15,30,.25), rgba(5,15,30,.25)), url('../images/echolisten-card.webp?v=2026-07-10-2') center top/cover; }
+.g11 { background: linear-gradient(rgba(20,10,25,.4), rgba(20,10,25,.4)), url('../images/ownership-card.webp?v=2026-07-10-2') center/cover; }
+.g12 { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../images/perennial-card.webp?v=2026-07-10-2') center/cover; }
 
 /* EXPERIENCE */
 .xp { border-top: 1px solid var(--line); }
@@ -179,9 +179,10 @@ footer { padding: 28px 0; font-size: 12.5px; color: var(--mid); display: flex; j
 .insight-row { display: grid; grid-template-columns: 140px minmax(0, 1fr) 60px; gap: 32px; align-items: start; padding: 44px 18px; border-bottom: 1px solid var(--black); transition: background .25s, color .25s, padding .25s; }
 .insight-row:hover { background: var(--black); color: var(--white); padding-left: 30px; }
 .insight-row .meta { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.insight-row .meta span { display: block; margin-top: 4px; color: var(--mid); font-weight: 600; }
 .insight-row h2 { font-size: clamp(30px, 4vw, 52px); line-height: 1.03; }
 .insight-row p { margin-top: 14px; max-width: 720px; color: var(--mid); font-size: 16px; }
-.insight-row:hover p { color: rgba(255,255,255,.68); }
+.insight-row:hover p, .insight-row:hover .meta span { color: rgba(255,255,255,.68); }
 .insight-row .arrow { font-size: 26px; text-align: right; }
 
 /* ARTICLE */
@@ -192,7 +193,7 @@ footer { padding: 28px 0; font-size: 12.5px; color: var(--mid); display: flex; j
 .article-meta span:first-child { color: var(--accent); }
 .article-figure { margin: 0 auto; max-width: 1440px; padding: 0 32px; }
 .article-figure img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
-.article-figure figcaption { margin-top: 10px; color: var(--mid); font-size: 11px; letter-spacing: .06em; }
+.article-figure figcaption { margin-top: 10px; color: var(--mid); font-size: 12px; letter-spacing: .06em; }
 .article-body { max-width: 1280px; margin: 0 auto; padding: 90px 32px 120px; }
 .article-grid { display: grid; grid-template-columns: minmax(170px, 260px) minmax(0, 760px); gap: clamp(50px, 9vw, 140px); justify-content: center; }
 .article-aside { position: sticky; top: 94px; align-self: start; }
