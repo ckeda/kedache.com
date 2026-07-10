@@ -9,6 +9,7 @@ Static personal portfolio site for Keda Che.
 - `assets/js/main.js` - small homepage interaction script
 - `assets/site-version.json` - current deployed release version for cache refresh checks
 - `assets/images/` - portraits, project cards, and social preview image
+- `insights/` - Insights index and category/article routes
 - `assets/docs/` - public downloadable documents
 - `robots.txt` and `sitemap.xml` - search engine crawl configuration
 - `CNAME` - GitHub Pages custom domain configuration for `kedache.com`
