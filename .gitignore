@@ -9,3 +9,4 @@ kedache-server*.zip
 *.swo
 .vscode/
 .idea/
+article-*-outline.md
