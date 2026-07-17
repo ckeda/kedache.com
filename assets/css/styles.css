@@ -122,18 +122,18 @@ a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .card h3 { font-size: 22px; font-weight: 700; letter-spacing: 0; line-height: 1.15; }
 .card p { font-size: 13.5px; margin-top: 8px; opacity: 0; max-height: 0; transition: opacity .25s, max-height .3s; line-height: 1.45; }
 .card:hover p, .card:focus-visible p { opacity: .95; max-height: 140px; }
-.g1  { background: linear-gradient(rgba(5,10,30,.35), rgba(5,10,30,.35)), url('../images/astrava-card.webp?v=2026-07-17-2') center/cover; }
-.g2  { background: linear-gradient(rgba(10,5,40,.35), rgba(10,5,40,.35)), url('../images/stablecoin-card.webp?v=2026-07-17-2') center/cover; }
-.g3  { background: linear-gradient(rgba(20,12,8,.35), rgba(20,12,8,.35)), url('../images/vetara-card.webp?v=2026-07-17-2') center/cover; }
-.g4  { background: linear-gradient(rgba(30,5,60,.3), rgba(30,5,60,.3)), url('../images/votigram-card.webp?v=2026-07-17-2') center/cover; }
-.g5  { background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/godgpt-card.webp?v=2026-07-17-2') center/cover; }
-.g6  { background: linear-gradient(rgba(10,5,25,.3), rgba(10,5,25,.3)), url('../images/tmrwdao-card.webp?v=2026-07-17-2') center/cover; }
-.g7  { background: linear-gradient(rgba(15,10,10,.4), rgba(15,10,10,.4)), url('../images/ubbey-card.webp?v=2026-07-17-2') center/cover; }
-.g8  { background: linear-gradient(rgba(5,5,15,.25), rgba(5,5,15,.25)), url('../images/next-card.webp?v=2026-07-17-2') center/cover; }
-.g9  { background: linear-gradient(rgba(15,15,20,.3), rgba(15,15,20,.3)), url('../images/tmark-card.webp?v=2026-07-17-2') center/cover; }
-.g10 { background: linear-gradient(rgba(5,15,30,.25), rgba(5,15,30,.25)), url('../images/clawinabox-card.webp?v=2026-07-17-2') center top/cover; }
-.g11 { background: linear-gradient(rgba(20,10,25,.4), rgba(20,10,25,.4)), url('../images/ownership-card.webp?v=2026-07-17-2') center/cover; }
-.g12 { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../images/perennial-card.webp?v=2026-07-17-2') center/cover; }
+.g1  { background: linear-gradient(rgba(5,10,30,.35), rgba(5,10,30,.35)), url('../images/astrava-card.webp?v=2026-07-17-3') center/cover; }
+.g2  { background: linear-gradient(rgba(10,5,40,.35), rgba(10,5,40,.35)), url('../images/stablecoin-card.webp?v=2026-07-17-3') center/cover; }
+.g3  { background: linear-gradient(rgba(20,12,8,.35), rgba(20,12,8,.35)), url('../images/vetara-card.webp?v=2026-07-17-3') center/cover; }
+.g4  { background: linear-gradient(rgba(30,5,60,.3), rgba(30,5,60,.3)), url('../images/votigram-card.webp?v=2026-07-17-3') center/cover; }
+.g5  { background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('../images/godgpt-card.webp?v=2026-07-17-3') center/cover; }
+.g6  { background: linear-gradient(rgba(10,5,25,.3), rgba(10,5,25,.3)), url('../images/tmrwdao-card.webp?v=2026-07-17-3') center/cover; }
+.g7  { background: linear-gradient(rgba(15,10,10,.4), rgba(15,10,10,.4)), url('../images/ubbey-card.webp?v=2026-07-17-3') center/cover; }
+.g8  { background: linear-gradient(rgba(5,5,15,.25), rgba(5,5,15,.25)), url('../images/next-card.webp?v=2026-07-17-3') center/cover; }
+.g9  { background: linear-gradient(rgba(15,15,20,.3), rgba(15,15,20,.3)), url('../images/tmark-card.webp?v=2026-07-17-3') center/cover; }
+.g10 { background: linear-gradient(rgba(5,15,30,.25), rgba(5,15,30,.25)), url('../images/clawinabox-card.webp?v=2026-07-17-3') center top/cover; }
+.g11 { background: linear-gradient(rgba(20,10,25,.4), rgba(20,10,25,.4)), url('../images/ownership-card.webp?v=2026-07-17-3') center/cover; }
+.g12 { background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url('../images/perennial-card.webp?v=2026-07-17-3') center/cover; }
 
 /* EXPERIENCE */
 .xp { border-top: 1px solid var(--line); }
@@ -236,14 +236,14 @@ footer { padding: 28px 0; font-size: 12.5px; color: var(--mid); display: flex; j
   .home-insight-categories span:nth-child(n+4) { border-top: 1px solid var(--black); }
   .article-grid { grid-template-columns: 1fr; gap: 45px; }
   .article-aside { position: static; max-width: 520px; }
-}
-
-@media (max-width: 640px) {
-  .wrap { padding: 0 22px; }
   .nav-toggle { display: flex; }
   .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 22px; padding: 24px 22px 28px; background: rgba(255,255,255,.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
   nav.open .nav-links { display: flex; }
   .nav-links a { font-size: 14px; }
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 22px; }
   h1 { font-size: 42px; }
   h2 { font-size: 30px; }
   .hero-sub { font-size: 17px; }
