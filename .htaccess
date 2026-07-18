@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Force all traffic to the canonical apex domain.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.kedache\.com$ [NC]
+RewriteRule ^ https://kedache.com%{REQUEST_URI} [L,R=301]
+
+# Preserve the old public CV URL with a clean redirect.
+Redirect 301 /Keda_Che_Master_CV_v1.1.pdf /assets/docs/Keda_Che_Public_CV.pdf
