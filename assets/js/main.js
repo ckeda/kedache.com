@@ -138,3 +138,53 @@
 
   io.observe(themes[0].parentElement);
 })();
+
+// Work cards: subtle 3D tilt and highlight on desktop pointer devices.
+(function () {
+  if (!window.matchMedia) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var cards = document.querySelectorAll('.grid .card');
+  if (!cards.length) return;
+
+  cards.forEach(function (card) {
+    var raf = 0;
+
+    function reset() {
+      card.classList.remove('is-tilting');
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+      card.style.removeProperty('--shine-x');
+      card.style.removeProperty('--shine-y');
+    }
+
+    card.addEventListener('pointerenter', function () {
+      card.classList.add('is-tilting');
+    });
+
+    card.addEventListener('pointermove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width;
+      var py = (e.clientY - rect.top) / rect.height;
+      var tiltY = (px - 0.5) * 10;
+      var tiltX = (0.5 - py) * 8;
+
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        card.classList.add('is-tilting');
+        card.style.setProperty('--tilt-x', tiltX.toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-y', tiltY.toFixed(2) + 'deg');
+        card.style.setProperty('--shine-x', (px * 100).toFixed(1) + '%');
+        card.style.setProperty('--shine-y', (py * 100).toFixed(1) + '%');
+      });
+    });
+
+    card.addEventListener('pointerleave', function () {
+      cancelAnimationFrame(raf);
+      reset();
+    });
+
+    card.addEventListener('blur', reset, true);
+  });
+})();
